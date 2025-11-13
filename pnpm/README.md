@@ -1,5 +1,7 @@
 ```sh
 $ mise install
+$ pnpm install
+$ direnv allow
 ```
 
 ## How did I initially build this project?
