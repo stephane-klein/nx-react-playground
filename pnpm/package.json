@@ -1,0 +1,11 @@
+{
+  "name": "playground",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "devDependencies": {
+    "nx": "22.0.3"
+  }
+}

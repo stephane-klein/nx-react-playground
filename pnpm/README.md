@@ -2,22 +2,40 @@
 $ mise install
 ```
 
-## How I setup the project?
+## How did I initially build this project?
 
+```sh
+$ cat <<'EOF' > package.json
+{
+  "name": "playground",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ]
+}
+EOF
 ```
-$ pnpm dlx nx@22.0.3 init
-Downloading @nx/nx-linux-x64-gnu@22.0.3: 7.30 MB/7.30 MB, done
-Packages: +124
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Progress: resolved 132, reused 72, downloaded 52, added 124, done
-Downloading @nx/nx-linux-x64-musl@22.0.3: 7.31 MB/7.31 MB, done
-.cache/pnpm/dlx/4c105c00584cbf18503aa77fea03e52f0adc9951ea2e11945451acea42b66614/19a7ca02f29-13d8ad/node_modules/.pnpm/nx@22.0.3/node_mod.cache/pnpm/dlx/4c105c00584cbf18503aa77fea03e52f0adc9951ea2e11945451acea42b66614/19a7ca02f29-13d8ad/node_modules/.pnpm/nx@22.0.3/node_modules/nx: Running postinstall script, done in 277ms
-CREATE nx.json
-CREATE .gitignore
-CREATE .nx/nxw.js
-CREATE nx.bat
-CREATE nx
 
+Next:
+
+```sh
+$ pnpm dlx nx@22.0.3 init
+ WARN  The "workspaces" field in package.json is not supported by pnpm. Create a "pnpm-workspace.yaml" file instead.
+✔ Would you like a minimum or guided setup? · Guided
+
+ NX   🐳 Nx initialization
+
+
+ NX   📦 Installing dependencies
+
+
+added 123 packages, and audited 124 packages in 4s
+
+27 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
 
  NX   🧐 Checking dependencies
 
@@ -33,5 +51,6 @@ CREATE nx
  NX   🎉 Done!
 
 - Learn more about what to do next at https://nx.dev/getting-started/adding-to-existing
-$ rm nx.bat
+- Read a detailed guide about adding Nx to NPM/YARN/PNPM workspaces: https://nx.dev/recipes/adopting-nx/adding-to-monorepos
+- Learn how Nx helps manage your TypeScript monorepo: https://nx.dev/features/maintain-ts-monorepos
 ```
